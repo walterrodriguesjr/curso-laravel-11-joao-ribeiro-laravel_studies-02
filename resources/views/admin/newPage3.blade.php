@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <p class="display-1 text-center">ADMIN</p>
+<h1>{{$name}} {{$cidade}}</h1>
 
 @endsection
 
