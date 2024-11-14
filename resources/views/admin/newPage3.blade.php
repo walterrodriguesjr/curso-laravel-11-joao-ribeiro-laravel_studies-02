@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>{{$name}} {{$cidade}}</h1>
+
 
 @endsection
 

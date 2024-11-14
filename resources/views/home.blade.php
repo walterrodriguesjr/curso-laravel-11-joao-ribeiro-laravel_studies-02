@@ -2,6 +2,6 @@
 
 @section('content')
 
-    <p class="display-1 text-center">Hello World</p>
+    <p class="display-1 text-center">{{$name}}</p>
 
 @endsection

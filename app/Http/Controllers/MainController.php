@@ -9,10 +9,6 @@ class MainController extends Controller
 {
     public function showView(): View
     {
-        $data = [
-            'name' => 'Walter',
-            'cidade' => 'Curitiba'
-        ];
-        return view('admin.newPage3')->with($data);
+        return view('home', ['name' => 'Walter']);
     }
 }
