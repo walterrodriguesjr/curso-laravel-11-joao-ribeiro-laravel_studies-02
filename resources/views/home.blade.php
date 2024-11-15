@@ -1,29 +1,23 @@
 @extends('layouts.main_layout')
 
 @section('content')
-    @for ($index = 0; $index < 5; $index++)
-        <h1>{{$index}}</h1>
-    @endfor
+    @for ($index = 0; $index < 10; $index++)
 
-    <hr>
 
-    @foreach ($cities as $city)
-        <h1>{{$city}}</h1>
-    @endforeach
+        @if ($index == 5)
+            @continue
+        @endif
 
-    <hr>
+        <p>Index: {{$index}}</p>
 
-    @forelse ($names as $name)
-    <h1>{{$name}}</h1>
-    @empty
-    <h1>Não há nomes cadastrados</h1>
-    @endforelse
+        @if ($index == 7)
+        @break
+    @endif
+@endfor
 
-    <hr>
+<hr>
 
-    @while ($indice < 10)
-        <p>O índice é: {{$indice++}}</p>
-    @endwhile
-    <p>Finalizou</p>
-
+@foreach ($cities as $city)
+    <p>{{$city}}</p>
+@endforeach
 @endsection
