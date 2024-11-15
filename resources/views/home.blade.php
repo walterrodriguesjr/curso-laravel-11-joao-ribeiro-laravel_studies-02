@@ -1,12 +1,20 @@
 @extends('layouts.main_layout')
 
 @section('content')
-    <p class="display-1 text-center">
-        @if ($value > 100)
-            <h1>é maior que 100</h1>
-        @elseif ($value == 100)
-            <h1>é igual a 100</h1>
-            @else
-            <h1>é menor que 100</h1>
-        @endif
-    @endsection
+    @switch($value)
+        @case(99)
+            <h1>é igual a 99</h1>
+        @break
+
+        @case(100)
+            <h1>é igual 100</h1>
+        @break
+
+        @case(110)
+            <h1>é  igual a 500</h1>
+        @break
+
+        @default
+            <h1>Nenhum das alternativas</h1>
+    @endswitch
+@endsection
