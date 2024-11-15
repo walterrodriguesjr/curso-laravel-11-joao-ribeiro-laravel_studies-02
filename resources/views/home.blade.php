@@ -2,11 +2,10 @@
 
 @section('content')
 
-   @production
-       <h1>Estou em ambiente de produção</h1>
-       @else
-       <h1>Estou em ambiente de desenvolvimento</h1>
-
-   @endproduction
+    @session('name')
+        <h1>{{ session('name')}}</h1>
+    @else
+        <h1>Não existe este dado</h1>
+    @endsession
 
 @endsection

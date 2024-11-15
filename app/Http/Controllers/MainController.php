@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Contracts\Session\Session;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
@@ -22,4 +23,23 @@ class MainController extends Controller
     {
         echo "Formulário submetido";
     }
+
+    public function setSession(): View
+    {
+        session(['name' => "Walter"]);
+        return view('home');
+    }
+
+    public function clearSession()
+    {
+        session()->forget('name');
+        return view('home');
+    }
+
+   /*  public function viewSession()
+    {
+        $teste = session()->all();
+        dd($teste);
+    } */
+
 }
