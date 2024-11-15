@@ -1,23 +1,24 @@
 @extends('layouts.main_layout')
 
 @section('content')
-    @for ($index = 0; $index < 10; $index++)
-
-
-        @if ($index == 5)
-            @continue
-        @endif
-
-        <p>Index: {{$index}}</p>
-
-        @if ($index == 7)
-        @break
-    @endif
-@endfor
-
-<hr>
-
-@foreach ($cities as $city)
-    <p>{{$city}}</p>
-@endforeach
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <form action="{{ route('submit') }}" method="post">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="" class="form-label">Username:</label>
+                        <input type="text" name="username" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Password:</label>
+                        <input type="password" name="password" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <button class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
