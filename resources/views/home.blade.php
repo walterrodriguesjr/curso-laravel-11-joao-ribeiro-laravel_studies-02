@@ -1,20 +1,19 @@
 @extends('layouts.main_layout')
 
 @section('content')
-    @switch($value)
-        @case(99)
-            <h1>é igual a 99</h1>
-        @break
+    @empty(!$value)
+        <h1>tem dado</h1>
+    @endempty
 
-        @case(100)
-            <h1>é igual 100</h1>
-        @break
+    <hr>
 
-        @case(110)
-            <h1>é  igual a 500</h1>
-        @break
+    @isset($value)
+        <h1>A variável existe</h1>
+    @endisset
 
-        @default
-            <h1>Nenhum das alternativas</h1>
-    @endswitch
+    <hr>
+
+    @unless($value != 100)
+    <h1>Valor é 100</h1>
+    @endunless
 @endsection
